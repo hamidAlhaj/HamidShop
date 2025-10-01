@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HamidShop — Modified</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER with large search -->
+  <header class="bg-white shadow-sm">
+    <div class="container">
+      <!-- top row: logo / search / icons -->
+      <div class="d-flex align-items-center gap-3 py-3">
+        <a class="d-flex align-items-center text-decoration-none logo-wrap" href="#">
+          <img src="images/HamidShop.png" alt="HamidShop Logo" width="56" height="56" class="me-2">
+          <span class="fw-bold brand-text">HamidShop</span>
+        </a>
+
+        <!-- big search bar centered -->
+        <div class="flex-fill d-flex justify-content-center">
+          <form id="bigSearchForm" class="search-bar d-flex align-items-center" onsubmit="return false;">
+            <i class="bi bi-search search-icon"></i>
+            <input id="bigSearchInput" class="form-control search-input" type="search" placeholder="Search all categories" aria-label="Search all categories">
+            <button class="btn btn-primary btn-search ms-3" type="submit">Search</button>
+          </form>
+        </div>
+
+        <!-- right icons -->
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-link icon-btn" aria-label="Location"><i class="bi bi-geo-alt"></i></button>
+          <button class="btn btn-link icon-btn" aria-label="Notifications"><i class="bi bi-bell"></i></button>
+          <button class="btn btn-link icon-btn" aria-label="Wishlist"><i class="bi bi-heart"></i></button>
+          <button id="cartBtn" class="btn btn-link icon-btn position-relative" aria-label="Cart">
+            <i class="bi bi-cart"></i>
+            <span id="cartCount" class="cart-badge">0</span>
+          </button>
+          <a href="#" class="ms-2 text-decoration-none">Sign In</a>
+        </div>
+      </div>
+
+      <!-- second row: category links (horizontal) -->
+      <nav class="secondary-nav py-2">
+        <ul class="nav nav-pills gap-3 flex-nowrap overflow-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Footwear</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Refurbished Mobile</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Express Shipping</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Jaw Dropping Deals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Kitchen & Dining</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Audio & Headphones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO: background image with overlay and text on left -->
+  <main>
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+              <div class="badge bg-warning text-dark mb-3">WEEKEND DISCOUNT</div>
+              <h1 class="display-3 fw-bold">BEST DEALS<br>ENDLESS DEALS</h1>
+              <p class="lead text-muted">Discover high-quality items, curated for you. Fast shipping. Great prices.</p>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-dark btn-lg">Shop Now</a>
+                <a href="#" class="btn btn-outline-secondary btn-lg">Learn More</a>
+              </div>
+            </div>
+            <!-- right column intentionally empty (image is background) -->
+            <div class="col-12 col-md-6 d-none d-md-block"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h4 mb-0">Featured Products</h2>
+          <a href="#" class="small text-decoration-none">View all</a>
+        </div>
+
+        <div class="row g-3" id="productsRow">
+          <!-- 10 product cards (same as before) -->
+          <!-- copy the 10 cards from your previous HTML (we keep them identical) -->
+          <!-- Card 1 -->
+          <div class="col-6 col-md-3 product-item" data-title="Hugo Boss" data-desc="Hugo Boss Boss Bottled Oud" data-price="49">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (10).jpeg" class="card-img-top object-cover" alt="Hugo Boss" loading="lazy">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                <button class="btn add-cart-btn" aria-label="Add Hugo Boss" data-title="Hugo Boss" data-price="49" data-img="images/pic (10).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Hugo Boss</h5>
+                <p class="text-muted small mb-3">Hugo Boss Boss Bottled Oud</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$49</span> <small class="text-muted text-decoration-line-through ms-1">$69</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-6 col-md-3 product-item" data-title="Headphones" data-desc="Nice red Headphones" data-price="29">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (11).jpeg" class="card-img-top object-cover" alt="Headphones" loading="lazy">
+                <button class="btn add-cart-btn" aria-label="Add Headphones" data-title="Headphones" data-price="29" data-img="images/pic (11).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Headphones</h5>
+                <p class="text-muted small mb-3">Nice red Headphones</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$29</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-6 col-md-3 product-item" data-title="Sunglasses" data-desc="Metal Frame Yellow Round Sunglasses" data-price="5.37">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (12).jpeg" class="card-img-top object-cover" alt="Sunglasses" loading="lazy">
+                <span class="badge bg-success position-absolute top-0 start-0 m-2">New</span>
+                <button class="btn add-cart-btn" aria-label="Add Sunglasses" data-title="Sunglasses" data-price="5.37" data-img="images/pic (12).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Sunglasses</h5>
+                <p class="text-muted small mb-3">Metal Frame Yellow Round Sunglasses</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$5.37</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-6 col-md-3 product-item" data-title="Hoodi" data-desc="Hoodi for Men" data-price="19">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (13).jpeg" class="card-img-top object-cover" alt="Hoodi" loading="lazy">
+                <button class="btn add-cart-btn" aria-label="Add Hoodi" data-title="Hoodi" data-price="19" data-img="images/pic (13).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Hoodi</h5>
+                <p class="text-muted small mb-3">Hoodi for Men</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$19</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-6 col-md-3 product-item" data-title="Gloves" data-desc="black gloves" data-price="19">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (14).jpeg" class="card-img-top object-cover" alt="Gloves" loading="lazy">
+                <button class="btn add-cart-btn" aria-label="Add Gloves" data-title="Gloves" data-price="19" data-img="images/pic (14).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Gloves</h5>
+                <p class="text-muted small mb-3">black gloves</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$19</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-6 col-md-3 product-item" data-title="Short Sleeve Shirt" data-desc="Men Random Floral Print" data-price="31">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (15).jpeg" class="card-img-top object-cover" alt="Short Sleeve Shirt" loading="lazy">
+                <button class="btn add-cart-btn" aria-label="Add Shirt" data-title="Short Sleeve Shirt" data-price="31" data-img="images/pic (15).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Short Sleeve Shirt</h5>
+                <p class="text-muted small mb-3">Men Random Floral Print</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$31</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="col-6 col-md-3 product-item" data-title="Sunglasses (black)" data-desc="black Sunglasses" data-price="23">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (2).jpeg" class="card-img-top object-cover" alt="Sunglasses black" loading="lazy">
+                <button class="btn add-cart-btn" aria-label="Add Sunglasses black" data-title="Sunglasses (black)" data-price="23" data-img="images/pic (2).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Sunglasses</h5>
+                <p class="text-muted small mb-3">black Sunglasses</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$23</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="col-6 col-md-3 product-item" data-title="Headphones (pink)" data-desc="pink headphones" data-price="15">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (3).jpeg" class="card-img-top object-cover" alt="Headphones pink" loading="lazy">
+                <button class="btn add-cart-btn" aria-label="Add Headphones pink" data-title="Headphones (pink)" data-price="15" data-img="images/pic (3).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Headphones</h5>
+                <p class="text-muted small mb-3">pink headphones</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$15</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="col-6 col-md-3 product-item" data-title="Perfume" data-desc="MYSELF perfume" data-price="45">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (4).jpeg" class="card-img-top object-cover" alt="Perfume" loading="lazy">
+                <button class="btn add-cart-btn" aria-label="Add Perfume" data-title="Perfume" data-price="45" data-img="images/pic (4).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">Perfume</h5>
+                <p class="text-muted small mb-3">MYSELF perfume</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$45</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="col-6 col-md-3 product-item" data-title="AirPods" data-desc="white bluetooth AirPods" data-price="15">
+            <div class="card h-100 product-card position-relative">
+              <div class="position-relative product-image-wrapper">
+                <img src="images/pic (5).jpeg" class="card-img-top object-cover" alt="AirPods" loading="lazy">
+                <button class="btn add-cart-btn" aria-label="Add AirPods" data-title="AirPods" data-price="15" data-img="images/pic (5).jpeg">
+                  <i class="bi bi-bag-plus-fill"></i>
+                </button>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-1">AirPods</h5>
+                <p class="text-muted small mb-3">white bluetooth AirPods</p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <div><span class="fw-bold">$15</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES (3 images) -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-12 col-md-4">
+            <div class="card overflow-hidden">
+              <div class="cat-image" style="background-image:url('images/men%20fashion.jpeg');"></div>
+              <div class="card-body">
+                <h5 class="card-title">Men Fashion</h5>
+                <p class="small text-muted mb-0">Everything for your men</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card overflow-hidden">
+              <div class="cat-image" style="background-image:url('images/women%20fashion.jpeg');"></div>
+              <div class="card-body">
+                <h5 class="card-title">Women Fashion</h5>
+                <p class="small text-muted mb-0">Stylish and modern fashion</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card overflow-hidden">
+              <div class="cat-image" style="background-image:url('images/category3.jpeg');"></div>
+              <div class="card-body">
+                <h5 class="card-title">Gifts</h5>
+                <p class="small text-muted mb-0">Find the perfect gift</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h3 class="h5 mb-4 text-center">What customers say</h3>
+        <div class="row justify-content-center g-3">
+          <div class="col-12 col-md-6 col-lg-4 d-flex">
+            <div class="card p-3 h-100 d-flex">
+              <div class="d-flex align-items-start gap-3">
+                <img src="images/comment1.jpeg" alt="Jad" width="56" height="56" class="rounded-circle object-cover" style="flex:0 0 56px;">
+                <div>
+                  <p class="mb-2">"Great quality, arrived fast!"</p>
+                  <div class="small text-muted">— Jad, London</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 d-flex">
+            <div class="card p-3 h-100 d-flex">
+              <div class="d-flex align-items-start gap-3">
+                <img src="images/comment2.jpeg" alt="Ahmed" width="56" height="56" class="rounded-circle object-cover" style="flex:0 0 56px;">
+                <div>
+                  <p class="mb-2">"Customer support helped me quickly."</p>
+                  <div class="small text-muted">— Ahmed, Cairo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 d-flex">
+            <div class="card p-3 h-100 d-flex">
+              <div class="d-flex align-items-start gap-3">
+                <img src="images/comment3.jpeg" alt="Lena" width="56" height="56" class="rounded-circle object-cover" style="flex:0 0 56px;">
+                <div>
+                  <p class="mb-2">"Excellent value for money."</p>
+                  <div class="small text-muted">— Lena, Berlin</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <h6 class="fw-bold">HamidShop</h6>
+          <p class="small text-muted">Quality products, delivered fast.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6 class="small text-uppercase">Shop</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-decoration-none text-muted">All Products</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">New</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Bestsellers</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h6 class="small text-uppercase">Support</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-decoration-none text-muted">Help Center</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Returns</a></li>
+            <li><a href="#" class="text-decoration-none text-muted">Shipping</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h6 class="small text-uppercase">Subscribe</h6>
+          <form class="d-flex" onsubmit="return false;">
+            <input class="form-control form-control-sm me-2" placeholder="Email address" aria-label="Email">
+            <button class="btn btn-sm btn-primary">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <hr class="my-4">
+      <div class="d-flex justify-content-between small text-muted">
+        <div>© <span id="year"></span> HamidShop</div>
+        <div>Built with Bootstrap</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- small scripts: cart + search -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // cart (simple)
+    const cartCountEl = document.getElementById('cartCount');
+    let cart = JSON.parse(localStorage.getItem('cart-demo') || '[]');
+    cartCountEl.textContent = cart.length;
+
+    function saveCart() {
+      localStorage.setItem('cart-demo', JSON.stringify(cart));
+      cartCountEl.textContent = cart.length;
+    }
+
+    document.querySelectorAll('.add-cart-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = {
+          title: btn.dataset.title,
+          price: Number(btn.dataset.price),
+          img: btn.dataset.img || ''
+        };
+        cart.push(item);
+        saveCart();
+        btn.classList.add('added');
+        setTimeout(()=> btn.classList.remove('added'), 350);
+      });
+    });
+
+    // big search: filters product cards by title/desc
+    const bigSearchForm = document.getElementById('bigSearchForm');
+    const bigSearchInput = document.getElementById('bigSearchInput');
+    bigSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = bigSearchInput.value.trim().toLowerCase();
+      filterProducts(q);
+    });
+    function filterProducts(q){
+      const items = document.querySelectorAll('.product-item');
+      items.forEach(it=>{
+        const title = (it.dataset.title || '').toLowerCase();
+        const desc = (it.dataset.desc || '').toLowerCase();
+        it.style.display = (!q || title.includes(q) || desc.includes(q)) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
